@@ -1,40 +1,40 @@
-# The Gilded Rose Kata
+# La rosa dorada
 
-## Setup
+## Requerimientos
 
-This repository includes the initial setup for this Kata, including the specs. It uses the [Kahlan library](http://kahlan.readthedocs.org/en/latest/), which you might not be familiar with. But, don't worry, there's nothing really to learn. Review the specs, and you'll understand the basic syntax in less than a minute.
+Hola y bienvenido al equipo La Rosa Dorada. Como sabes, somos una pequeño posada situado en el centro de la ciudad. La dueña de la posada se llama Alicia. Como sabes, tambien vendemos mejores productos. Desafortunadamente, la calidad de nuestros productos se degrada conforme de acerca su fecha de caducidad. Tenemos un programa que actualiza nuestro inventario por nosotros. El programa fue desarrollado por un tipo loco llamado Mauricio antes de irse a buscar nuevas aventuras.
 
-Your job is to:
+**Tu tarea es actualizar el programa para que podamos a empezar a vender una nueva categoria de productos.**
 
-1. Refactor the monstrous code in the `GildedRose.php` class.
-2. Add a new item type, "Conjured". The specs for this item are commented out in the `GildedRoseSpec.php` file.
+Empecemos con una introducción a nuestro programa:
 
-When finished (or for help), you may review the solution by switching to the "solution" branch of this repo.
+- Todos los productos tienen un `diasParaVencimiento` que indica cuantos dias nos quedan para poder venderlo.
+- Todos los productos tienen una `calidad` que indica cual es el estado del producto.
+- Al final del dia, el programa reduce la calidad de `venderEn` y `calidad`
 
-## Rules
 
-Hi and welcome to team Gilded Rose. As you know, we are a small inn with a prime location in a prominent city ran by a friendly innkeeper named Allison. We also buy and sell only the finest goods. Unfortunately, our goods are constantly degrading in quality as they approach their sell by date. We have a system in place that updates our inventory for us. It was developed by a no-nonsense type named Leeroy, who has moved on to new adventures.
+Fácil no? Bien, pues ahora es donde las cosas se ponen interesantes:
 
-**Your task is to add the new feature to our system so that we can begin selling a new category of items.**
+- Una vez se ha vencido `diasParaVencimiento`, la `calidad` del producto se degrada el doble de rápido.
+- La `calidad` de un producto nunca puedde ser negativa.
+- El producto `queso brie`, al contrario, incrementa su `calidad` cuanto mas envejece.
+- La `calidad` de un producto nunca puede ser mayor de 50.
+- El producto `sulfuras`, al ser un producto legendario, no tiene dias para vencimiento y tampoco se degrada en calidad.
+- Lo `pases al camerino`, como los `quesos brie`, incrementa su `calidad` cuanto menos dias quedan para su vencimiento. Su `calidad` se incrementa el doble cuando quedan menos de 10 dias para su vencimiento y por el triple cuando quedan menos de cinco dias. Sin embargo, su `calidad` baja a cero despues del concierto.
 
-First an introduction to our system:
+Hace poco hemos firmado un contrato con un proveedor de `conjuros`. Para ello, tenemos que actualizar nuestro programa:
 
-- All items have a SellIn value which denotes the number of days we have to sell the item
-- All items have a Quality value which denotes how valuable the item is
-- At the end of each day our system lowers both values for every item
+`Conjuros` se degradan en calidad el doble de rapido que los productos normales.
 
-Pretty simple, right? Well this is where it gets interesting:
+Para clarificar, un producto nunca puede tener su `calidad` por encima de 50, sin embargo `sulfuras` es un producto legendario, y por ello, su `calidad` siempre es 80 y no cambia nunca.
 
-- Once the sell by date has passed, Quality degrades twice as fast
-- The Quality of an item is never negative
-- "Aged Brie" actually increases in Quality the older it gets
-- The Quality of an item is never more than 50
-- "Sulfuras", being a legendary item, never has to be sold or decreases in Quality
-- "Backstage passes", like aged brie, increases in Quality as it's SellIn value approaches; Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but Quality drops to 0 after the concert
+## Agradecimientos
 
-We have recently signed a supplier of conjured items. This requires an update to our system:
+Esta kata no la hice yo :). La kata fue diseñada por Terry Hughes([http://twitter.com/TerryHughes](http://twitter.com/TerryHughes)). 
 
-"Conjured" items degrade in Quality twice as fast as normal items
+Yo la encontré en PHP en el repositorio de Jeffrey Way([https://github.com/laracasts/Gilded-Rose-Kata-in-PHP](https://github.com/laracasts/Gilded-Rose-Kata-in-PHP)).
 
-Just for clarification, an item can never have its Quality increase above 50, however "Sulfuras" is a legendary item and as such its Quality is 80 and it never alters.
+Mi aporte ha sido traducirla a Español.
+
+Espero que la disfruten.
 
