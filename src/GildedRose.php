@@ -2,70 +2,71 @@
 
 namespace App;
 
-class GildedRose
+class RosaDorada
 {
-    public $name;
+    public $nombre;
 
-    public $quality;
+    public $calidad;
 
-    public $sellIn;
+    public $diasParaVencimiento;
 
-    public function __construct($name, $quality, $sellIn)
+    public function __construct($nombre, $calidad, $diasParaVencimiento)
     {
-        $this->name = $name;
-        $this->quality = $quality;
-        $this->sellIn = $sellIn;
+        $this->nombre = $nombre;
+        $this->calidad = $calidad;
+        $this->diasParaVencimiento = $diasParaVencimiento;
     }
 
-    public static function of($name, $quality, $sellIn) {
-        return new static($name, $quality, $sellIn);
+    public static function of($nombre, $calidad, $diasParaVencimiento)
+    {
+        return new static($nombre, $calidad, $diasParaVencimiento);
     }
 
     public function tick()
     {
-        if ($this->name != 'Aged Brie' and $this->name != 'Backstage passes to a TAFKAL80ETC concert') {
-            if ($this->quality > 0) {
-                if ($this->name != 'Sulfuras, Hand of Ragnaros') {
-                    $this->quality = $this->quality - 1;
+        if ($this->nombre != 'queso brie' and $this->nombre != 'pases de camerino') {
+            if ($this->calidad > 0) {
+                if ($this->nombre != 'sulfuras') {
+                    $this->calidad = $this->calidad - 1;
                 }
             }
         } else {
-            if ($this->quality < 50) {
-                $this->quality = $this->quality + 1;
+            if ($this->calidad < 50) {
+                $this->calidad = $this->calidad + 1;
 
-                if ($this->name == 'Backstage passes to a TAFKAL80ETC concert') {
-                    if ($this->sellIn < 11) {
-                        if ($this->quality < 50) {
-                            $this->quality = $this->quality + 1;
+                if ($this->nombre == 'pases de camerino') {
+                    if ($this->diasParaVencimiento < 11) {
+                        if ($this->calidad < 50) {
+                            $this->calidad = $this->calidad + 1;
                         }
                     }
-                    if ($this->sellIn < 6) {
-                        if ($this->quality < 50) {
-                            $this->quality = $this->quality + 1;
+                    if ($this->diasParaVencimiento < 6) {
+                        if ($this->calidad < 50) {
+                            $this->calidad = $this->calidad + 1;
                         }
                     }
                 }
             }
         }
 
-        if ($this->name != 'Sulfuras, Hand of Ragnaros') {
-            $this->sellIn = $this->sellIn - 1;
+        if ($this->nombre != 'sulfuras') {
+            $this->diasParaVencimiento = $this->diasParaVencimiento - 1;
         }
 
-        if ($this->sellIn < 0) {
-            if ($this->name != 'Aged Brie') {
-                if ($this->name != 'Backstage passes to a TAFKAL80ETC concert') {
-                    if ($this->quality > 0) {
-                        if ($this->name != 'Sulfuras, Hand of Ragnaros') {
-                            $this->quality = $this->quality - 1;
+        if ($this->diasParaVencimiento < 0) {
+            if ($this->nombre != 'queso brie') {
+                if ($this->nombre != 'pases de camerino') {
+                    if ($this->calidad > 0) {
+                        if ($this->nombre != 'sulfuras') {
+                            $this->calidad = $this->calidad - 1;
                         }
                     }
                 } else {
-                    $this->quality = $this->quality - $this->quality;
+                    $this->calidad = $this->calidad - $this->calidad;
                 }
             } else {
-                if ($this->quality < 50) {
-                    $this->quality = $this->quality + 1;
+                if ($this->calidad < 50) {
+                    $this->calidad = $this->calidad + 1;
                 }
             }
         }
