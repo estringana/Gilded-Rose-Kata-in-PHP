@@ -1,28 +1,30 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App;
 
 class RosaDorada
 {
-    public $nombre;
+    public string $nombre;
 
-    public $calidad;
+    public int $calidad;
 
-    public $diasParaVencimiento;
+    public int $diasParaVencimiento;
 
-    public function __construct($nombre, $calidad, $diasParaVencimiento)
+    public function __construct(string $nombre, int $calidad, int $diasParaVencimiento)
     {
         $this->nombre = $nombre;
         $this->calidad = $calidad;
         $this->diasParaVencimiento = $diasParaVencimiento;
     }
 
-    public static function of($nombre, $calidad, $diasParaVencimiento)
+    public static function of($nombre, $calidad, $diasParaVencimiento): self
     {
         return new static($nombre, $calidad, $diasParaVencimiento);
     }
 
-    public function tick()
+    public function tick(): void
     {
         if ($this->nombre != 'queso brie' and $this->nombre != 'pases de camerino') {
             if ($this->calidad > 0) {
