@@ -19,11 +19,6 @@ class RosaDorada
         $this->diasParaVencimiento = $diasParaVencimiento;
     }
 
-    public static function of($nombre, $calidad, $diasParaVencimiento): self
-    {
-        return new static($nombre, $calidad, $diasParaVencimiento);
-    }
-
     public function tick(): void
     {
         if ($this->nombre != 'queso brie' and $this->nombre != 'pases de camerino') {
