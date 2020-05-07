@@ -1,6 +1,6 @@
 # La rosa dorada
 
-Hola y bienvenido al equipo La Rosa Dorada. Como sabes, somos una pequeño posada situado en el centro de la ciudad. La dueña de la posada se llama Alicia. Como sabes, tambien vendemos mejores productos. Desafortunadamente, la calidad de nuestros productos se degrada conforme de acerca su fecha de caducidad. Tenemos un programa que actualiza nuestro inventario por nosotros. El programa fue desarrollado por un tipo loco llamado Mauricio antes de irse a buscar nuevas aventuras.
+Hola y bienvenido al equipo La Rosa Dorada. Como sabes, somos una pequeño posada situado en el centro de la ciudad. La dueña de la posada se llama Elanor. Como sabes, tambien vendemos mejores productos. Desafortunadamente, la calidad de nuestros productos se degrada conforme de acerca su fecha de caducidad. Tenemos un programa que actualiza nuestro inventario por nosotros. El programa fue desarrollado por un tipo loco llamado Bolger antes de irse a buscar nuevas aventuras.
 
 **Tu tarea es actualizar el programa para que podamos a empezar a vender una nueva categoria de productos.**
 
@@ -24,8 +24,6 @@ Hace poco hemos firmado un contrato con un proveedor de `conjuros`. Para ello, t
 
 `Conjuros` se degradan en calidad el doble de rapido que los productos normales.
 
-Para clarificar, un producto nunca puede tener su `calidad` por encima de 50, sin embargo `sulfuras` es un producto legendario, y por ello, su `calidad` siempre es 80 y no cambia nunca.
-
 ## Agradecimientos
 
 Esta kata no la hice yo :). La kata fue diseñada por Terry Hughes([http://twitter.com/TerryHughes](http://twitter.com/TerryHughes)). 
@@ -35,4 +33,3 @@ Yo la encontré en PHP en el repositorio de Jeffrey Way([https://github.com/lara
 Mi aporte ha sido traducirla a Español.
 
 Espero que la disfruten.
-
