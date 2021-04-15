@@ -35,14 +35,20 @@ class RosaDorada
                     if ($this->diasParaVencimiento < 11) {
                         if ($this->calidad < 50) {
                             $this->calidad = $this->calidad + 1;
+                        } else {
+                            $this->calidad = 50;
                         }
                     }
                     if ($this->diasParaVencimiento < 6) {
                         if ($this->calidad < 50) {
                             $this->calidad = $this->calidad + 1;
+                        } else {
+                            $this->calidad = 50;
                         }
                     }
                 }
+            } else {
+                $this->calidad = 50;
             }
         }
 
@@ -64,6 +70,8 @@ class RosaDorada
             } else {
                 if ($this->calidad < 50) {
                     $this->calidad = $this->calidad + 1;
+                } else {
+                    $this->calidad = 50;
                 }
             }
         }
